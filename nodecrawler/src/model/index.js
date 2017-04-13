@@ -11,5 +11,5 @@ function createModel(modelName) {
 };
 
 module.exports = {
-	Researcher: createModel('Researcher')
+	Researcher: createModel('Researcher'),
 };
