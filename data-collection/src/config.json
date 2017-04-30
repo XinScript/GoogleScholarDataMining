@@ -1,0 +1,13 @@
+{
+  "LOG_LEVEL": "debug",
+  "MONGODB_URL": "mongodb://localhost:27018/GoogleScholar",
+  "PROFILE_LIMIT": 10000,
+  "PUBS_LIMIT": 6000,
+  "HOSTNAME": "scholar.google.co.uk",
+  "REQ_PER_MIN": 60,
+  "START_URL": [
+    "/citations?user=_TwBJFcAAAAJ&hl=en&oe=ASCII",
+    "/citations?user=ZflJqeUAAAAJ&hl=en&oe=ASCII"
+  ],
+  "TIMEOUT": 10000
+}

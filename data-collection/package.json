@@ -1,0 +1,27 @@
+{
+  "name": "node-crawler",
+  "version": "1.0.0",
+  "description": "Google Scholar Web Crawler",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src -d lib",
+    "start": "node lib/index.js"
+  },
+  "keywords": [
+    "cralwer"
+  ],
+  "author": "xinscript",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "co": "^4.6.0",
+    "csv": "^1.1.1",
+    "fast-levenshtein": "^2.0.6",
+    "gulp": "^3.9.1",
+    "iconv-lite": "^0.4.15",
+    "mongoose": "^4.9.0",
+    "winston": "^2.3.1",
+    "wuzzy": "^0.1.3"
+  }
+}
