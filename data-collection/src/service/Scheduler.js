@@ -109,8 +109,34 @@ function* fetchPortrait(count) {
 	const handler = setInterval(Helper.wrap(handle), interval);
 }
 
+function* fetchCollaborator(count){
+	const pool = yield Researcher.find({'collaborator':{'$exists':false}}, 'ID').limit(count).exec();
+
+	function* handle() {
+		if (pool.length) {
+			const profile = pool.shift();
+			const res = yield Request.fetchText(`/citations?view_op=list_colleagues&hl=en&oe=ASCII&user=${profile.ID}`, config.HOSTNAME);
+			
+				if (!res.body) {
+					logger.info(`Request url:${res.url} timeout, reappending to pool.`);
+				} else {
+					logger.info(`Start Parsing ${res.url}`);
+					let cols = Parser.parseCollaborator(res.body);
+					profile.collaborator = cols;
+					yield profile.save();
+					logger.info(`Sucessful Profile Fetching:${++count}`)
+			}
+		} else {
+			clearInterval(handler);
+		}
+	}
+	const handler = setInterval(Helper.wrap(handle), interval);
+
+}
+
 module.exports = {
 	fetchProfiles: Helper.wrap(fetchProfile),
 	fetchPubs: Helper.wrap(fetchPubs),
 	fetchPortrait: Helper.wrap(fetchPortrait),
+	fetchCollaborator:Helper.wrap(fetchCollaborator)
 }

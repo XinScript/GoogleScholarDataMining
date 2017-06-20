@@ -45,7 +45,6 @@ function fetchImg(path) {
 	return new Promise((resolve, reject) => {
 		const req = https.request(options, (res) => {
 			const buf = new Stream();
-			// const buf = []
 			res.on('data', (d) => {
 				buf.push(d)
 			}).on('end', () => {

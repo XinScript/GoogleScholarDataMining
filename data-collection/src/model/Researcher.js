@@ -27,7 +27,8 @@ const schema = new Schema({
 		type: String,
 		required: true
 	},
-	pubs: [Pub]
+	pubs: [Pub],
+	collaborator:[String]
 });
 
 schema.index({

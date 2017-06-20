@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const spider = require('./src/service/Scheduler');
 const logger = require('winston');
-const preprocess = require('./src/preprocessing/cleaner');
+const preprocess = require('./src/service/Cleaner');
 
 
 gulp.task('dev', ['build'], () => {
@@ -23,6 +23,10 @@ gulp.task('clean',()=>{
 
 gulp.task('portrait',()=>{
 	spider.fetchPortrait(0);
+})
+
+gulp.task('col',()=>{
+	spider.fetchCollaborator(30000);
 })
 
 gulp.task('build', () => {

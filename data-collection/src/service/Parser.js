@@ -52,7 +52,19 @@ function parsePubs(body) {
 	return [pubs, ifContinue];
 };
 
+function parseCollaborator(body){
+	const $ = cheerio.load(body);
+	const parent = $('#gsc_ccl .gsc_1usr_name');
+	const n = parent.length;
+	const cols = []
+	for (let i = 0; i < n; i++) {
+		cols.push(parent.eq(i).text())
+	}
+	return cols;
+}
+
 module.exports = {
 	parsePubs,
-	parseProfile
+	parseProfile,
+	parseCollaborator
 };
