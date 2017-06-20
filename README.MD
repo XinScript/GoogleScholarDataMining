@@ -29,9 +29,9 @@ ensemble. The directory is about the codes of the ensemble model including cross
 ### A.1 Crawler
 #### A.1.1 Installation
 
-Go to this link and download the Node.js and make sure the version is 7.0 or above.
+Go to this [link](https://nodejs.org/en/) and download the Node.js and make sure the version is 7.0 or above.
 
-Download the NPM from here
+Download the NPM from [here](https://www.npmjs.com/)
 
 Globally Install Gulp via “npm install –g gulp”
 
@@ -39,7 +39,7 @@ CD into the data-collection directory and run “npm install”
 
 The above command will install all dependencies and libraries automatically
 
-Install MongoDB 3.4 or above version from here 
+Install MongoDB 3.4 or above version from [here](https://www.mongodb.com/download-center) 
 
 Run MongoDB at port 27018 and make sure the database name is GoogleScholar or you can also modify the config.json to meet personal requirements
 
@@ -65,15 +65,17 @@ Run “gulp clean” to clean the venues and copy them into a new collection
 
 ### A.2 Image Alignment
 
-Clone the facenet repository from here.
+Clone the facenet repository from [here](https://github.com/davidsandberg/facenet).
 
-How to do the alignment please refer to this issue.
+How to do the alignment please refer to this [issue](https://github.com/davidsandberg/facenet/issues/55).
 
 Then use the commands in command.txt to do the image alignment
 
 ### A.3 The Name-based Model
 
 Codes in this directory are trivial so I just give out brief descriptions of each script
+
+Download scikit-learn, numpy, matplotlib as dependencies.
 
 Make sure all the scripts are invoked in the ‘scirpts/’ directory
 
@@ -93,11 +95,11 @@ Other scripts are just for experiments.
 
 ### A.4 The Portrait-based Model
 
-Clone the TensorFlow repository from here
+Clone the TensorFlow repository from [here](https://github.com/tensorflow/tensorflow)
 
 Get the aligned dataset ready
 
-Run the retrain.py method for training, refer to this link
+Run the retrain.py method for training, refer to this [link](https://www.tensorflow.org/tutorials/image_retraining)
 
 If you want the parameters I used, check command.txt
 
